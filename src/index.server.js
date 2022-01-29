@@ -6,7 +6,8 @@ const mongoose = require('mongoose');
 
 //routes
 
-const itemRoutes = require('./routes/items')
+//const itemRoutes = require('./routes/items')
+const productRoutes = require('./routes/product')
 
 
 env.config();
@@ -28,8 +29,8 @@ mongoose.connect(
 });
 app.use(express.json())
 
-app.use('/api',itemRoutes)
-
+//app.use('/api',itemRoutes)
+app.use('/api',productRoutes)
 
 app.get('/',(req,res,next)=>{
     res.status(200).json({
