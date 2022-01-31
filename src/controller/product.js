@@ -1,7 +1,13 @@
 const Product = require('../models/product')
 var ObjectId = require('mongodb').ObjectId;
 
-exports.addProduct =  (req,res) =>{
+const productService = require('../service/product')
+module.exports = {
+     addProduct  : productService.addProduct,
+     editProduct :productService.editProduct
+     }
+
+/*exports.addProduct =  (req,res) =>{
 
         const{
             name,
@@ -45,4 +51,4 @@ exports.addProduct =  (req,res) =>{
           });
     }
 
-    
+    */

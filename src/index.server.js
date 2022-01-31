@@ -32,6 +32,7 @@ app.use(express.json())
 //app.use('/api',itemRoutes)
 app.use('/api',productRoutes)
 
+
 app.get('/',(req,res,next)=>{
     res.status(200).json({
         message:'hello from server'
