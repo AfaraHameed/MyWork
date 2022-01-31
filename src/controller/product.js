@@ -1,7 +1,7 @@
 const Product = require('../models/product')
 var ObjectId = require('mongodb').ObjectId;
 
-const productService = require('../service/product')
+const productService = require('../service/productService')
 module.exports = {
      addProduct  : productService.addProduct,
      editProduct :productService.editProduct
