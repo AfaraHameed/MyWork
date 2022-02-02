@@ -3,7 +3,11 @@ const Constants = require('../util/constants')
 var ObjectId = require('mongodb').ObjectId;
 
 let addproduct = function addProduct(product){
-    product.save((error, data) => {
+
+    const _product = new Product(product)
+         
+
+    _product.save((error, data) => {
         if (error) {
 
             console.log("error")
