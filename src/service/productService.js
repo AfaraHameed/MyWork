@@ -1,38 +1,25 @@
-const productRrepository =   require('../repository/productRepository')
+const productRepository =   require('../repository/productRepository')
 const Product = require('../models/product')
-exports.addProduct =  (req,res) =>{
+let addproduct =  function addProduct(name,price,description){
 
-    const{
-        name,
-        price,
-        description
-       
-    }  =req.body;
     const _product = new Product({ name,
         price,
         description,
        
 })
 
-productRrepository.addProduct(_product)
+productRepository.addProduct(_product)
   
 }
 
-exports.editProduct =  (req,res) => {
+let editproduct = function editProduct(id,updateObject){
 
-    let updateObject = req.body; // {name : "phone", price: 10000}
-    let id = req.params.id;
-    
-    productRrepository.editProduct(id,updateObject)
+    productRepository.editProduct(id,updateObject)
 
-    /*Product.updateOne({_id  : ObjectId(id)}, {$set: updateObject})
-    .then(data=>{
-
-        res.send({status:"Success",data:data});
-    })
-      .catch( e => {
-        res.error(req, res, 'Internal Error', 500, e);
-      });*/
+}
+module.exports = {
+    addProduct : addproduct,
+    editProduct :editproduct
 }
 
 

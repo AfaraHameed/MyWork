@@ -29,7 +29,8 @@ mongoose.connect(
 });
 app.use(express.json())
 
-//app.use('/api',itemRoutes)
+
+
 app.use('/api',productRoutes)
 
 
