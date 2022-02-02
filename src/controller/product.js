@@ -1,5 +1,3 @@
-const Product = require('../models/product')
-var ObjectId = require('mongodb').ObjectId;
 
 const productService = require('../service/productService')
 
